@@ -23,6 +23,7 @@
   "devDependencies": {
     "@babel/node": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "prisma": "^3.7.0"
   }
 }
