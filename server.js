@@ -1,17 +1,25 @@
+import { PrismaClient } from '@prisma/client';
 import { ApolloServer, gql } from 'apollo-server';
+
+const client = new PrismaClient();
 
 const typeDefs = gql`
   type Movie {
-    title: String
-    year: Int
+    id: Int!
+    title: String!
+    year: Int!
+    genre: String
+    createdAt: String!
+    updatedAt: String!
+
   }
 
   type Query {
-    movies: [Movie]
-    movie: Movie
+    movies: [Movie],
+    movie(id: Int!): Movie
   }
   type Mutation {
-    createMovie(title: String!): Boolean
+    createMovie(title: String!, year: Int!, genre: String ): Movie
     deleteMovie(title: String!): Boolean
   }
 `;
@@ -24,16 +32,19 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-      movies: () => [],
-      movie: () => ({ title: "Hello", year: 2021 }),
+      movies: () => client.movie.findMany(),
+      movie: (_, {id}) => ({ title: "Hello", year: 2021 }),
     },
     Mutation: { // _ 는 go에서 컴파일러가 무시, root는 가장높은 권한 -> 첫번째 인자를 무시하기 위해서 _ 을 넣음
-      createMovie: (_, title) => {
-        console.log(title);
-        return true;
-      },
-      deleteMovie: (_, title) => {
-        console.log(title);
+      createMovie: (_, { title, year, genre }) =>
+        client.movie.create({
+            data: {
+                title,
+                year,
+                genre,
+            },
+        }),
+      deleteMovie: (_, id) => {
         return true;
       },
     },
