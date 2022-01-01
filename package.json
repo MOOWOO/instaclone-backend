@@ -1,11 +1,12 @@
 {
   "name": "instaclone",
   "version": "1.0.0",
-  "description": "",
+  "description": "Instaclone Backend.",
   "scripts": {
     "dev": "nodemon --exec babel-node server",
     "migrate": "nxp prisma migrate dev --preview-feature",
-    "studio": "nxp prisma studio"
+    "studio": "nxp prisma studio",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -31,5 +32,6 @@
     "@babel/preset-env": "^7.16.5",
     "nodemon": "^2.0.15",
     "prisma": "^3.7.0"
-  }
+  },
+  "main": "client.js"
 }
