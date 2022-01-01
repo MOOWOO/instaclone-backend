@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/MOOWOO/instaclone-backend#readme",
   "dependencies": {
+    "@prisma/client": "^3.7.0",
     "apollo-server": "^3.5.0",
     "graphql": "^15.8.0"
   },
