@@ -31,8 +31,8 @@
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
-    "@babel/node": "^7.16.5",
-    "@babel/preset-env": "^7.16.5",
+    "@babel/node": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
     "nodemon": "^2.0.15",
     "prisma": "^3.7.0"
   },
