@@ -20,12 +20,15 @@
   },
   "homepage": "https://github.com/MOOWOO/instaclone-backend#readme",
   "dependencies": {
+    "@babel/core": "^7.16.7",
     "@graphql-tools/load-files": "^6.5.3",
     "@prisma/client": "^3.7.0",
     "apollo-server": "^3.5.0",
+    "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
     "graphql": "^15.8.0",
-    "graphql-tools": "^8.2.0"
+    "graphql-tools": "^8.2.0",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
     "@babel/node": "^7.16.5",
