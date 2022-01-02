@@ -10,6 +10,7 @@ export default gql`
     createdAt: String!
     updatedAt: String!
   }
+
   type Mutation {
     createAccount(
       firstName: String!
@@ -19,7 +20,7 @@ export default gql`
       password: String!
     ): User
   }
-  type Query{
-      seeProfile(username: String):User
+  type Query {
+    seeProfile(username: String): User
   }
 `;
